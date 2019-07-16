@@ -95,7 +95,12 @@ export class UserGridComponent implements OnInit {
 
     onCellDoubleClicked(params) {
         let user = params.data as User;
-        this.dialogConfig.data = user;
+        this.dialogConfig.data = { user: user, dialogTitle: 'Edit User', submitBtnTitle: 'Update', allowDelete: true };
+        this.dialog.open(EditUserDialogComponent, this.dialogConfig);
+    }
+
+    openNewUserDialog() {
+        this.dialogConfig.data = { user: null, dialogTitle: 'Create new User', submitBtnTitle: 'Create' };
         this.dialog.open(EditUserDialogComponent, this.dialogConfig);
     }
 }

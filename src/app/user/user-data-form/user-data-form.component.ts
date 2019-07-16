@@ -55,7 +55,13 @@ export class UserDataFormComponent implements OnInit, AfterContentInit {
         return pass === confirmPass ? null : { notSame: true }
     }
 
+    deleteUser() {
+        this.repoService.delete(this.userData);
+        this.dialog.closeAll();
+    }
+
     @Input() userData: User;
     @Input() submitCallback: any;
     @Input() submitBtnTitle: any;
+    @Input() allowDelete: any;
 }

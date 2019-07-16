@@ -1,8 +1,15 @@
 .user_grid_wrapper {
     margin: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.user_grid_wrapper div {
+    width: 90%;
+    text-align: left;
+    margin-bottom: 10px;
 }
 
 .ag-theme-balham {

@@ -42,6 +42,8 @@
         </mat-form-field>
     </p>
     <div class="button">
-        <button type="submit" mat-button>{{submitBtnTitle}}</button>
+        <button type="submit" color="accent" mat-flat-button>{{submitBtnTitle}}</button>
+        <button *ngIf="allowDelete" type="button" mat-flat-button color="warn" (click)="deleteUser()">Delete
+            User</button>
     </div>
 </form>

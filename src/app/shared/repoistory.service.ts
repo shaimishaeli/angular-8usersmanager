@@ -79,7 +79,9 @@ export class RepositoryService {
     }
 
     public updateUser(oldUser: User, newUser: User) {
-        this.delete(oldUser);
+        if (oldUser != undefined && oldUser != null) {
+            this.delete(oldUser);
+        }
         this.createUser(newUser);
     }
 
@@ -88,6 +90,10 @@ export class RepositoryService {
         var index = users.findIndex(x => x.Email == user.Email && x.Password == user.Password);
         if (index > -1) {
             users.splice(index, 1);
+        }
+
+        if (users.length == 0) {
+            this.logoutUser();
         }
 
         localStorage.setItem('usersData', JSON.stringify(users));

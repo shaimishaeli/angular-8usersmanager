@@ -1,4 +1,7 @@
 <div class="user_grid_wrapper">
+    <div>
+        <button type="button" mat-flat-button (click)="openNewUserDialog()">Create new user</button>
+    </div>
     <ag-grid-angular #agGrid style="width: 90%; height: 500px;" class="ag-theme-balham" [gridOptions]="gridOptions"
         animateRows pagination [paginationPageSize]="10" (cellDoubleClicked)="onCellDoubleClicked($event)"
         (gridReady)="onGridReady($event)">
