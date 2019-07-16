@@ -36,8 +36,20 @@
         </mat-form-field>
     </p>
     <p>
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let country of filteredCountry | async" [value]="country.name">
+                <span>{{ country.name }} | {{ country.code }}</span>
+            </mat-option>
+        </mat-autocomplete>
+
         <mat-form-field>
-            <input type="text" matInput placeholder="Residency" formControlName="residency" required>
+            <input type="text" matInput placeholder="Residency" formControlName="residency" [matAutocomplete]="auto"
+                required>
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let country of filteredCountry | async" [value]="country.name">
+                    <span>{{ country.name }} | {{ country.code }}</span>
+                </mat-option>
+            </mat-autocomplete>
             <mat-error *ngIf="form.hasError('residency', 'required')">Residency is required</mat-error>
         </mat-form-field>
     </p>
