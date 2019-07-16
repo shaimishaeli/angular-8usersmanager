@@ -1,0 +1,12 @@
+.edit_user_dialog_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 600px;
+    height: 800px;
+}
+
+.diag_content {
+    max-height: unset;
+}

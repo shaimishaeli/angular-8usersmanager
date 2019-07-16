@@ -1,0 +1,47 @@
+<form [formGroup]="form" autocomplete="off" (ngSubmit)="submitCallback(form)">
+    <p>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Username" formControlName="username" required>
+            <mat-error *ngIf="form.hasError('required', 'username')">Username is required</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Email" formControlName="email" required>
+            <mat-error *ngIf="form.hasError('required', email)">Email is required</mat-error>
+            <mat-error *ngIf="form.hasError('email', 'email')">Please insert a valid Email</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input type="password" matInput placeholder="Password" formControlName="password" required>
+            <mat-error *ngIf="form.hasError('required', 'password')">Password is required</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input type="password" matInput placeholder="Re enter Password" formControlName="passwordCheck" required
+                [errorStateMatcher]="matcher">
+            <mat-error *ngIf="form.hasError('passwordCheck', 'required')">Password is required</mat-error>
+            <mat-error *ngIf="form.hasError('notSame')">Passwords do not match</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput [matDatepicker]="dateOfBirth" placeholder="Choose a date" formControlName="dateOfBirth"
+                id="dateOfBirth" readonly (click)="dateOfBirth.open()" required>
+            <mat-datepicker-toggle matSuffix [for]="dateOfBirth"></mat-datepicker-toggle>
+            <mat-datepicker #dateOfBirth></mat-datepicker>
+            <mat-error *ngIf="form.hasError('dateOfBirth', 'required')">Date Of Birth is required</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Residency" formControlName="residency" required>
+            <mat-error *ngIf="form.hasError('residency', 'required')">Residency is required</mat-error>
+        </mat-form-field>
+    </p>
+    <div class="button">
+        <button type="submit" mat-button>{{submitBtnTitle}}</button>
+    </div>
+</form>

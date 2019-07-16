@@ -1,4 +1,17 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="body_container">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span class="home_btn"><a href="/">HOME</a></span>
+            <span class="spacer"></span>
+
+            <button mat-button (click)='someMethod()' [matMenuTriggerFor]="menu">Menu</button>
+            <mat-menu #menu="matMenu">
+                <div *ngFor="let item of navItems">
+                    <a mat-button routerLink="{{item.Route}}">{{item.Title}}</a>
+                </div>
+            </mat-menu>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
+<router-outlet></router-outlet>

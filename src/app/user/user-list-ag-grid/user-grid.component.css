@@ -1,0 +1,11 @@
+.user_grid_wrapper {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ag-theme-balham {
+    width: 90%;
+    height: auto;
+}

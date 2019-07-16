@@ -1,0 +1,31 @@
+.user_list_table_wrapper {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_list_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    background: #fff;
+}
+
+table {
+    width: 90%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+mat-paginator {
+    width: 90%;
+}
+
+th.mat-header-cell {
+    text-align: left;
+    max-width: 300px!important;
+}

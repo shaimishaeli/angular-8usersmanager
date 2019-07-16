@@ -1,0 +1,6 @@
+<div class="user_grid_wrapper">
+    <ag-grid-angular #agGrid style="width: 90%; height: 500px;" class="ag-theme-balham" [gridOptions]="gridOptions"
+        animateRows pagination [paginationPageSize]="10" (cellDoubleClicked)="onCellDoubleClicked($event)"
+        (gridReady)="onGridReady($event)">
+    </ag-grid-angular>
+</div>

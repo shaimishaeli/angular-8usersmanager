@@ -1,0 +1,12 @@
+<div class='edit_user_dialog_wrapper'>
+    <section fxLayout="column" fxLayoutAlign="center center">
+        <h1 mat-dialog-title>Edit User</h1>
+        <mat-dialog-content class="diag_content">
+            <user-data-form [userData]="this.data" [submitCallback]="this.submitCallback"
+                [submitBtnTitle]="this.submitBtnTitle"></user-data-form>
+        </mat-dialog-content>
+        <mat-dialog-actions>
+            <button mat-raised-button color="primary" (click)="closeDialog()">Close</button>
+        </mat-dialog-actions>
+    </section>
+</div>
